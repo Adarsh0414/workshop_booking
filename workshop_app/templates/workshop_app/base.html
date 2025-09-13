@@ -16,6 +16,7 @@
     <script src="{% static 'workshop_app/js/toastr.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
 
 
     {% block extra-dependencies %}
@@ -78,8 +79,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User menu">
-                       <span class="material-icons" style="vertical-align: middle">account_circle</span>
-                        <p style="display: inline; vertical-align: middle">
+                       <span class="material-icons user-name">account_circle</span>
+                        <p class="user-name">
                             {{user.get_full_name|title}}
                         </p>
                     </a>
@@ -116,57 +117,42 @@
     </div>
 </div>
 
-<script>
-    {% if messages %}
-        {% for message in messages %}
-            toastr[{% if message.tags %} "{{ message.tags }}" {% else %} "info" {% endif %}]("{{ message }}");
-        {% endfor %}
-    {% endif %}
-</script>
-
 <nav class="bottom-nav" aria-label="Mobile navigation">
     <a href="/" class="bottom-nav-item active" aria-label="Home">
-        <i class="material-icons">home</i>
+        <i class="material-icons" alt="Home">home</i>
         <span>Home</span>
     </a>
     <a href="{% url 'statistics_app:public' %}" class="bottom-nav-item" aria-label="Workshop Statistics">
-        <i class="material-icons">bar_chart</i>
+        <i class="material-icons" alt="Statistics">bar_chart</i>
         <span>Statistics</span>
     </a>
     {% if user.is_authenticated %}
     <a href="{% url 'workshop_app:propose_workshop' %}" class="bottom-nav-item" aria-label="Propose Workshop">
-        <i class="material-icons">add_circle_outline</i>
+        <i class="material-icons" alt="Propose">add_circle_outline</i>
         <span>Propose</span>
     </a>
     <a href="{% url 'workshop_app:view_own_profile' %}" class="bottom-nav-item" aria-label="Profile">
-        <i class="material-icons">person</i>
+        <i class="material-icons" alt="Profile">person</i>
         <span>Profile</span>
     </a>
     {% else %}
     <a href="{% url 'workshop_app:login' %}" class="bottom-nav-item" aria-label="Login">
-        <i class="material-icons">login</i>
+        <i class="material-icons" alt="Login">login</i>
         <span>Login</span>
     </a>
     <a href="{% url 'workshop_app:register' %}" class="bottom-nav-item" aria-label="Register">
-        <i class="material-icons">person_add</i>
+        <i class="material-icons" alt="Register">person_add</i>
         <span>Register</span>
     </a>
     {% endif %}
 </nav>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if ("loading" in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll("img[loading='lazy']");
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            const script = document.createElement("script");
-            script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
-            document.body.appendChild(script);
-        }
-    });
+    {% if messages %}
+        {% for message in messages %}
+            toastr[{% if message.tags %} "{{ message.tags }}" {% else %} "info" {% endif %}]("{{ message }}");
+        {% endfor %}
+    {% endif %}
 </script>
 
 </body>
