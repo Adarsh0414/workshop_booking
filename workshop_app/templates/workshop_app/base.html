@@ -114,42 +114,44 @@
 </div>
 
 <nav class="bottom-nav" aria-label="Mobile navigation">
-    <a href="/" class="bottom-nav-item active" aria-label="Home">
-        <i class="material-icons" alt="Home">home</i>
+    <a href="/" class="bottom-nav-item active">
+        <i class="material-icons">home</i>
         <span>Home</span>
     </a>
-    <a href="{% url 'statistics_app:public' %}" class="bottom-nav-item" aria-label="Workshop Statistics">
-        <i class="material-icons" alt="Statistics">bar_chart</i>
+    <a href="{% url 'statistics_app:public' %}" class="bottom-nav-item">
+        <i class="material-icons">bar_chart</i>
         <span>Statistics</span>
     </a>
     {% if user.is_authenticated %}
-    <a href="{% url 'workshop_app:propose_workshop' %}" class="bottom-nav-item" aria-label="Propose Workshop">
-        <i class="material-icons" alt="Propose">add_circle_outline</i>
+    <a href="{% url 'workshop_app:propose_workshop' %}" class="bottom-nav-item">
+        <i class="material-icons">add_circle_outline</i>
         <span>Propose</span>
     </a>
-    <a href="{% url 'workshop_app:view_own_profile' %}" class="bottom-nav-item" aria-label="Profile">
-        <i class="material-icons" alt="Profile">person</i>
+    <a href="{% url 'workshop_app:view_own_profile' %}" class="bottom-nav-item">
+        <i class="material-icons">person</i>
         <span>Profile</span>
     </a>
     {% else %}
-    <a href="{% url 'workshop_app:login' %}" class="bottom-nav-item" aria-label="Login">
-        <i class="material-icons" alt="Login">login</i>
+    <a href="{% url 'workshop_app:login' %}" class="bottom-nav-item">
+        <i class="material-icons">login</i>
         <span>Login</span>
     </a>
-    <a href="{% url 'workshop_app:register' %}" class="bottom-nav-item" aria-label="Register">
-        <i class="material-icons" alt="Register">person_add</i>
+    <a href="{% url 'workshop_app:register' %}" class="bottom-nav-item">
+        <i class="material-icons">person_add</i>
         <span>Register</span>
     </a>
     {% endif %}
 </nav>
 
 <script>
+    var messages = [];
     {% if messages %}
         {% for message in messages %}
-            toastr[{% if message.tags %} "{{ message.tags }}" {% else %} "info" {% endif %}]("{{ message }}");
+            messages.push({ "tags": "{{ message.tags }}", "message": "{{ message }}" });
         {% endfor %}
     {% endif %}
 </script>
+<script src="{% static 'workshop_app/js/custom_scripts.js' %}"></script>
 
 </body>
 <footer class="footer">
