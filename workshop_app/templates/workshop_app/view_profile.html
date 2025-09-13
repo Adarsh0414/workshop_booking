@@ -6,44 +6,51 @@
 {% block content %}
 
     <div class="container">
-        {% if Workshops %}
-            <table class="table table-bordered">
-                <tr>
-                    <th><label for="id_first_name"><h5>First name:</h5></label></th>
-                    <th><label for="id_first_name"><h5>{{ coordinator_profile.user.first_name }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_last_name"><h5>Last name:</h5></label></th>
-                    <th><label for="id_last_name"><h5>{{ coordinator_profile.user.last_name }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_email"><h5>Email:</h5></label></th>
-                    <th><label for="id_email"><h5>{{ coordinator_profile.user.email }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_institute"><h5>Institute:</h5></label></th>
-                    <th><label for="id_institute"><h5>{{ coordinator_profile.user.profile.institute }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_phone_number"><h5>Phone Number:</h5></label></th>
-                    <th><label for="id_phone_number"><h5>{{ coordinator_profile.user.profile.phone_number }}</h5></label>
-                    </th>
-                </tr>
-                <tr>
-                    <th><label for="id_department"><h5>Department:</h5></label></th>
-                    <th><label for="id_department"><h5>{{ coordinator_profile.user.profile.department }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_location"><h5>Location:</h5></label></th>
-                    <th><label for="id_location"><h5>{{ coordinator_profile.user.profile.location }}</h5></label></th>
-                </tr>
-                <tr>
-                    <th><label for="id_position"><h5>Position:</h5></label></th>
-                    <th><label for="id_position"><h5>{{ coordinator_profile.user.profile.position }}</h5></label></th>
-                </tr>
-            </table>
-            <br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://placehold.co/200x200" class="img-fluid rounded-circle" alt="Profile Picture">
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tr>
+                        <th><label for="id_first_name"><h5>First name:</h5></label></th>
+                        <th><label for="id_first_name"><h5>{{ coordinator_profile.user.first_name }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_last_name"><h5>Last name:</h5></label></th>
+                        <th><label for="id_last_name"><h5>{{ coordinator_profile.user.last_name }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_email"><h5>Email:</h5></label></th>
+                        <th><label for="id_email"><h5>{{ coordinator_profile.user.email }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_institute"><h5>Institute:</h5></label></th>
+                        <th><label for="id_institute"><h5>{{ coordinator_profile.user.profile.institute }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_phone_number"><h5>Phone Number:</h5></label></th>
+                        <th><label for="id_phone_number"><h5>{{ coordinator_profile.user.profile.phone_number }}</h5></label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_department"><h5>Department:</h5></label></th>
+                        <th><label for="id_department"><h5>{{ coordinator_profile.user.profile.department }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_location"><h5>Location:</h5></label></th>
+                        <th><label for="id_location"><h5>{{ coordinator_profile.user.profile.location }}</h5></label></th>
+                    </tr>
+                    <tr>
+                        <th><label for="id_position"><h5>Position:</h5></label></th>
+                        <th><label for="id_position"><h5>{{ coordinator_profile.user.profile.position }}</h5></label></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br>
 
+        {% if Workshops %}
             <div class="container">
             <h2>Workshop Details</h2>
             <table class="table table-bordered">

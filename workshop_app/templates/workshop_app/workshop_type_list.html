@@ -15,27 +15,20 @@
         <br>
     {% endif %}
 	<div class="container">
-		<table class="table table-hover">
-		  <thead>
-		    <tr>
-		      <th>Sr No</th>
-		      <th>Workshop Name</th>
-		      <th>Workshop Duration (Days)</th>
-		      <th>Action</th>
-		    </tr>
-		  </thead>
-
-		{% for w in workshop_type %}
-		  <tbody>
-		    <tr  >
-		      <td scope="row" id="{{ forloop.counter }}">{{ forloop.counter }}</td>
-		      <td>{{ w.name }}</td>
-		      <td>{{ w.duration }}</td>
-		      <td><a href="{% url 'workshop_app:workshop_type_details' w.id %}" class="btn btn-outline-info" class="accordion-toggle" >View Workshop Details</a></td>
-		    </tr>
-		  </tbody>
-		 {% endfor %}
-		</table>
+		<div class="row">
+			{% for w in workshop_type %}
+				<div class="col-md-4">
+					<div class="card mb-4 shadow-sm">
+						<img src="https://placehold.co/300x200" class="card-img-top" alt="{{ w.name }}">
+						<div class="card-body">
+							<h5 class="card-title">{{ w.name }}</h5>
+							<p class="card-text">Duration: {{ w.duration }} days</p>
+							<a href="{% url 'workshop_app:workshop_type_details' w.id %}" class="btn btn-primary">View Details</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 	    <!-- The Modal -->
