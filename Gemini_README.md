@@ -45,10 +45,14 @@ The improvements adhere to “mobile-first” design, simplicity, clarity, and a
 
 ## Image Enhancements
 
-- **Placeholder Images:** Added placeholder images to the following templates to make the website more interactive:
+- **Internet Images:** Replaced the placeholder images with images from the internet to make the website more interactive.
     - `workshop_details.html`: Added a large image at the top of the page to visually represent the workshop.
     - `workshop_type_list.html`: Replaced the table layout with a grid of cards, where each card has an image representing the workshop type.
     - `view_profile.html`: Added a placeholder image for the user's profile picture.
+
+## Background Image
+
+- **Subtle Background:** Added a subtle, abstract background image to the website to make it more visually appealing. The background image is fixed and does not scroll with the content.
 
 ## Responsiveness
 
