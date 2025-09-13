@@ -3,6 +3,7 @@ from django.db.models import Q
 from django.forms import inlineformset_factory, model_to_dict
 from django.http import JsonResponse, Http404
 from django.urls import reverse
+from django.db.utils import IntegrityError
 
 try:
     from StringIO import StringIO as string_io
@@ -139,16 +140,23 @@ def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            username, password, key = form.save()
-            new_user = authenticate(username=username, password=password)
-            login(request, new_user)
-            user_position = request.user.profile.position
-            send_email(
-                request, call_on='Registration',
-                user_position=user_position,
-                key=key
-            )
-            return render(request, 'workshop_app/activation.html')
+            try:
+                username, password, key = form.save()
+                new_user = authenticate(username=username, password=password)
+                login(request, new_user)
+                user_position = request.user.profile.position
+                send_email(
+                    request, call_on='Registration',
+                    user_position=user_position,
+                    key=key
+                )
+                return render(request, 'workshop_app/activation.html')
+            except IntegrityError:
+                messages.error(request, "A user with that username already exists. Please choose a different username.")
+                return render(
+                    request, "workshop_app/register.html",
+                    {"form": form}
+                )
         else:
             if request.user.is_authenticated:
                 return redirect('workshop:view_profile')
