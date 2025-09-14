@@ -182,3 +182,17 @@ Contributions are welcome! Fork the repository, work on a feature branch, and su
 - UI enhancements inspired by modern mobile-first design principles  
 - UI Framework: Bootstrap 5  
 - IIT Bombay for academic guidelines and standards
+
+### Reasoning
+
+**What design principles guided your improvements?**
+Simplicity, clarity, and ease of use, coupled with a mobile-first approach, were the key design principles. Given that the users are students who mostly use the platform on their phones, the user interface was designed on the premise of smaller screens to maximize usability. The interface visually emphasizes certain aspects by providing a visual hierarchy that colors, size, and spacing. Standardized GUI elements lessen the mental effort needed, while the use of appropriate HTML tags and ARIA attributes help to provide access for users with disabilities.
+
+**How did you ensure responsiveness across devices?**
+Meeting responsive design goals took several steps. Use CSS media queries to dynamically reflow content based on viewport size. Use Flexbox CSS and CSS Grid layout for added structural flexibility. Use Bootstrap 5 for responsive grids and utility classes to provide consistent behavior on the same devices. Apart from interactive elements that needed to meet prescribed reach standards of 44 x 44 pixels and above to accommodate easy touches, Images and media were responsive to preserve the integrity of aspect ratios to prevent layout breaks.
+
+**What trade-offs did you make between the design and performance?**
+It was important for me to find equilibrium between an appealing UI with rich features and performant and accessible code. In this regard, large images and severe animations were avoided or optimized (e.g., replacing bitmaps with SVG icons), achieving lower load time for users with slow bandwidth or devices, and ensuring fast load times for everyone. Using some parts of Bootstrap through CDN and some custom builds helped to eliminate styling inconsistency without asset bloat. Therefore, restrained design moderation was embraced for speed, reliability, and accessibility, ensuring lower resource consumption and better scalability.
+
+**What was the most challenging part of the task, and how did you approach it?**
+The issue I faced was that of greatly improving the user interface at the same time I am trying to preserve the present core workflow and user expectations. This was very important to us in terms of maintaining the trust and familiarity of our returning users, while at the same time, I introduced new visual and interactive elements. I addressed this by use of an iterative development and rigorous testing approach, which included continuous usability testing of our emulators and hardware, which I had access to. Also, I put forth an effort to preserve semantic structure for accessibility issues, to see to it that this site was keyboard-friendly, and to present changes in such a way as to increase user confidence in our platform.
