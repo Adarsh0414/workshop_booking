@@ -129,9 +129,33 @@ The UI/UX enhancements emphasize a mobile-first design, simplicity, clarity, and
 ## Visual Showcase
 
 > **Before and After Screenshots:**
-> Log In :
-Before: <img width="1796" height="902" alt="image" src="https://github.com/user-attachments/assets/f6cd2b47-5cde-492d-8342-963fcfdc5666" />
-After:<img width="1904" height="933" alt="image" src="https://github.com/user-attachments/assets/cbf42bfa-2759-4f6f-b850-6a4092aeb8d8" />
+> **Log In:**
+> Before:
+> ![Login Before]<img width="1796" height="902" alt="image" src="https://github.com/user-attachments/assets/f6cd2b47-5cde-492d-8342-963fcfdc5666" />
+> After:
+> ![Login After]<img width="1904" height="933" alt="image" src="https://github.com/user-attachments/assets/cbf42bfa-2759-4f6f-b850-6a4092aeb8d8" />
+> **Register:**
+> Before:
+> ![Register Before]<img width="1783" height="902" alt="image" src="https://github.com/user-attachments/assets/dbbffff7-f84b-4180-a904-f325a1f57bf7" />
+> After:
+> ![Register After]<img width="1900" height="925" alt="image" src="https://github.com/user-attachments/assets/7c1ec490-e5b4-4d38-adf6-1408d4d4cab3" />
+> **Home page:**
+> <img width="1901" height="918" alt="image" src="https://github.com/user-attachments/assets/c88cb7ff-3e96-4234-bccf-982ddbcd09e3" />
+> **Workshop Types Page:**
+> <img width="1901" height="926" alt="image" src="https://github.com/user-attachments/assets/c72c0643-a118-4ac7-b6b4-42aa4db882d2" />
+> **Workshop Detail Page:**
+> <img width="1919" height="931" alt="image" src="https://github.com/user-attachments/assets/9b408692-8e6f-4191-80fc-65ba1432e969" />
+> **Propose Workshop:**
+> <img width="1895" height="928" alt="image" src="https://github.com/user-attachments/assets/81a39152-da3f-4a87-bd36-203cc758791a" />
+> **Workshop Statistics:**
+> <img width="1906" height="925" alt="image" src="https://github.com/user-attachments/assets/e55a6cd3-8a63-4076-8745-d63bd387eede" />
+> **State Chart:**
+> <img width="1902" height="928" alt="image" src="https://github.com/user-attachments/assets/58c7d2e6-d82b-48bf-80b1-7878890d5787" />
+> **Workshop Chart:**
+> <img width="1900" height="927" alt="image" src="https://github.com/user-attachments/assets/76dbbbfd-3a02-4c38-b62c-ebb51b18c136" />
+> **Profile:**
+> <img width="1901" height="928" alt="image" src="https://github.com/user-attachments/assets/e9ab1af9-0bd0-4019-b517-f9c33c1f74ea" />
+> <img width="1900" height="933" alt="image" src="https://github.com/user-attachments/assets/e7fd3e83-0494-467d-9395-a5f64ceb6f68" />
 ---
 
 ## Code Structure & Documentation
@@ -148,7 +172,7 @@ All code is modular, clean, well-documented, and follows best practices for main
 
 ## Contributing
 
-Contributions are welcome! Fork the repository, work on a feature branch, and submit pull requests. Report issues or feature requests via GitHub issues.
+Contributions are welcome! Fork the repository, work on a feature branch, and submit pull requests.
 
 ---
 
