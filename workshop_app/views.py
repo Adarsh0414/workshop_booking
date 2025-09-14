@@ -462,7 +462,7 @@ def add_workshop_type(request):
                         args=[form_data.id])
             )
     else:
-        form = WorkshopTypeForm
+        form = WorkshopTypeForm()
     return render(request, 'workshop_app/add_workshop_type.html', {'form': form})
 
 
